@@ -5,8 +5,8 @@ import styles from "./FavouritesList.module.css";
 export function FavouritesList({ products }) {
   return (
     <CenterContent>
-      <h2>Ulubione</h2>
       <div className={styles.favouritesList}>
+        <h2>Ulubione</h2>
         {products.map((product) => {
           return (
             <FavouriteProduct
