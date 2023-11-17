@@ -3,17 +3,17 @@ import "./styles/globals.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Cart } from "./views/Cart/Cart";
+import { ProductsList } from "./views/ProductsList/Productslist";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Cart />,
-    },
+  {
+    path: "/",
+    element: <ProductsList />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
-        <RouterProvider router={router}></RouterProvider>
-    </React.StrictMode>
+  <React.StrictMode>
+    <RouterProvider router={router}></RouterProvider>
+  </React.StrictMode>
 );
