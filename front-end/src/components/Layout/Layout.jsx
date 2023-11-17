@@ -8,21 +8,21 @@ import { MainMenu } from "../MainMenu/MainMenu";
 import { TopBar } from "../TopBar/TopBar";
 
 export function Layout({ children }) {
-  return (
-    <>
-      <MainContent>
-        <TopBar>
-          <MainMenu />
-          <Logo />
-          <div>
-            <CurrencySelector />
-            <IconMenu />
-          </div>
-        </TopBar>
-        <CategoryMenu />
-        {children}
-      </MainContent>
-      <Footer />
-    </>
-  );
+    return (
+        <>
+            <MainContent>
+                <TopBar>
+                    <MainMenu />
+                    <Logo />
+                    <div>
+                        <CurrencySelector />
+                        <IconMenu />
+                    </div>
+                </TopBar>
+                <CategoryMenu />
+                {children}
+            </MainContent>
+            <Footer />
+        </>
+    );
 }

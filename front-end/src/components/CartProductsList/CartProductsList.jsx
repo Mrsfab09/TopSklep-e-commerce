@@ -1,20 +1,17 @@
-import styles from "./FavouritesList.module.css";
+import styles from "./CartProductsList.module.css";
 
 import { CenteredContent } from "../CenteredContent/CenteredContent";
-import { FavouriteProduct } from "../FavouriteProduct/FavouriteProduct";
+import { CartProduct } from "../CartProduct/CartProduct";
 
-export function FavouritesList({ products }) {
+export function CartProductsList({ products }) {
     return (
         <CenteredContent>
             <div className={styles.favouritesList}>
-                <h2>Ulubione</h2>
+                <h2>Koszyk</h2>
                 <div>
                     {products.map((product) => {
                         return (
-                            <FavouriteProduct
-                                key={product.id}
-                                product={product}
-                            />
+                            <CartProduct key={product.id} product={product} />
                         );
                     })}
                 </div>
