@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { CATEGORIES } from "../../constants/categories";
 import ARROW_ICON from "../../assets/arrow.svg";
 import styles from "./ExpandableMenu.module.css";
-export function ExpadableMenu() {
+export function ExpandableMenu() {
   const activePath = "akcesoria";
   return (
     <div className={styles.expandableMenu}>
