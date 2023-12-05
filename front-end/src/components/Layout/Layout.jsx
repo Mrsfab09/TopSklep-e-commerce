@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import { CategoryMenu } from "../CategoryMenu/CategoryMenu";
 import { CurrencySelector } from "../CurrencySelector/CurrencySelector";
 import { Footer } from "../Footer/Footer";
@@ -7,22 +8,22 @@ import { MainContent } from "../MainContent/MainContent";
 import { MainMenu } from "../MainMenu/MainMenu";
 import { TopBar } from "../TopBar/TopBar";
 
-export function Layout({ children }) {
-    return (
-        <>
-            <MainContent>
-                <TopBar>
-                    <MainMenu />
-                    <Logo />
-                    <div>
-                        <CurrencySelector />
-                        <IconMenu />
-                    </div>
-                </TopBar>
-                <CategoryMenu />
-                {children}
-            </MainContent>
-            <Footer />
-        </>
-    );
+export function Layout() {
+  return (
+    <>
+      <MainContent>
+        <TopBar>
+          <MainMenu />
+          <Logo />
+          <div>
+            <CurrencySelector />
+            <IconMenu />
+          </div>
+        </TopBar>
+        <CategoryMenu />
+        <Outlet />
+      </MainContent>
+      <Footer />
+    </>
+  );
 }

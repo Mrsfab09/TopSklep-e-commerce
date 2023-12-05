@@ -3,13 +3,38 @@ import "./styles/globals.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import { ProductsList } from "./views/ProductsList/Productslist";
-import { ProductDetails } from "./views/ProductDetails/ProductDetails";
+import { Favourites } from "./views/Favourites/Favourites";
+import { Cart } from "./views/Cart/Cart";
+import { MainPage } from "./views/MainPage/MainPage";
+import { Layout } from "./components/Layout/Layout";
+import { mainPageLoader } from "./api/mainPageLoader";
+import { ProductsList } from "./views/ProductsList/ProductsList";
+import { productListLoader } from "./api/productListLoader";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <ProductDetails />,
+    path: "",
+    element: <Layout />,
+    children: [
+      {
+        path: "/koszyk",
+        element: <Cart />,
+      },
+      {
+        path: "/ulubione",
+        element: <Favourites />,
+      },
+      {
+        path: "/:gender?",
+        element: <MainPage />,
+        loader: mainPageLoader,
+      },
+      {
+        path: "/:gender/:category/:subcategory?",
+        element: <ProductsList />,
+        loader: productListLoader,
+      },
+    ],
   },
 ]);
 
