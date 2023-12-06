@@ -10,8 +10,21 @@ import { Layout } from "./components/Layout/Layout";
 import { mainPageLoader } from "./api/mainPageLoader";
 import { ProductsList } from "./views/ProductsList/ProductsList";
 import { productListLoader } from "./api/productListLoader";
+import { ProductDetails } from "./views/ProductDetails/ProductDetails";
+import { productLoader } from "./api/productLoader";
+import { addProductsToFavouriteAction } from "./api/addProductsToFavouriteAction";
+import { favouritesLoader } from "./api/favouritesLoader";
+import { deleteFavouriteAction } from "./api/deleteFavouriteAction";
 
 const router = createBrowserRouter([
+  {
+    path: "/add-to-favourites/:productId",
+    action: addProductsToFavouriteAction,
+  },
+  {
+    path: "/delete-from-favourites/:favouriteId",
+    action: deleteFavouriteAction,
+  },
   {
     path: "",
     element: <Layout />,
@@ -23,6 +36,7 @@ const router = createBrowserRouter([
       {
         path: "/ulubione",
         element: <Favourites />,
+        loader: favouritesLoader,
       },
       {
         path: "/:gender?",
@@ -33,6 +47,11 @@ const router = createBrowserRouter([
         path: "/:gender/:category/:subcategory?",
         element: <ProductsList />,
         loader: productListLoader,
+      },
+      {
+        path: "/:gender/:category/:subcategory/:productId",
+        element: <ProductDetails />,
+        loader: productLoader,
       },
     ],
   },
