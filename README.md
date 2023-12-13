@@ -1,6 +1,6 @@
 <div width="100%" align="center">
-  <img style="height: 150px" src="vite.svg">
-  <img style="height: 150px" src="react.svg">
+  <img style="height: 120px" src="vite.svg">
+  <img style="height: 120px" src="react.svg">
 </div>
 
 # TopSklep
